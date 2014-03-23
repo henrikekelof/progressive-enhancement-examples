@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<title>CSS Errors</title>
+	<link rel="stylesheet" href="demo-style.css">
+
+	<style>
+
+	.test1 {
+		
+		font-weight: bold;
+		
+		/* Detta är ett grovt fel som gör att resten av deklarationen
+		   kommer att ignoreras. Deklarationen efter kommer dock att
+		   läsas som normalt. */
+		henrik: 1337
+		
+		color: red;
+
+	} 
+
+	.test2 {
+		
+		/* Det här är ett snällt fel som ignoreras helt. */
+		henrik: 1337;
+		
+		text-decoration: underline;
+
+	}
+
+	</style>
+
+</head>
+<body>
+
+	<div role="main">
+		
+			<p class="test1 test2">Den här texten kommer sannolikt att vara svart, fet och understruken.</p>
+
+<code>
+<pre>
+
+.test1 {
+	
+	font-weight: bold;
+	
+/* Detta är ett grovt fel som gör att resten av deklarationen kommer att ignoreras. Deklarationen efter kommer dock att läsas som normalt. */
+	henrik: 1337
+	
+	color: red;
+
+} 
+
+.test2 {
+	
+/* Det här är ett snällt fel som ignoreras helt och resten av deklarationen gäller som vanligt. */
+	henrik: 1337;
+	
+	text-decoration: underline;
+
+}
+
+</pre>
+</code>
+
+	</div>
+
+</body>
+</html>
