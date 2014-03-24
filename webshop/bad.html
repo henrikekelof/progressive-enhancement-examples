@@ -1,0 +1,31 @@
+---
+layout: webshop
+title: Tin Foil Hat Shop
+---
+		
+<noscript>
+	<div class="warning">
+	Du har JavaScript avstängt. Varför har du det?!?
+	<br>
+	Slå på det genast om du vill kunna använda vår webbplats!!
+	</div>
+</noscript>
+
+<script>
+function loadExample1() {
+	xmlhttp = new XMLHttpRequest();	
+	xmlhttp.onreadystatechange = function() {
+		if (xmlhttp.readyState == 4 && xmlhttp.status == 200) {
+			document.getElementById('ex-1-info').innerHTML = xmlhttp.responseText;
+		}
+	}
+	xmlhttp.open("GET", "information.html", true);
+	xmlhttp.send();
+}
+</script>
+
+<a href="javascript:loadExample1()" id="ex-1">Visa information</a>
+
+<div class="info" id="ex-1-info"></div>
+
+

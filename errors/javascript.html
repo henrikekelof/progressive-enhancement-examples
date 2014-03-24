@@ -1,0 +1,75 @@
+---
+layout: default
+title: Demo
+---
+
+
+<style>
+
+.underline {
+	text-decoration: underline;
+}
+
+.bold {
+	font-weight: bold;
+}
+
+</style>
+
+
+
+<p>Den här sidan innehåller ett script.</p>
+
+<p>Scriptet loopar över alla &lt;p&gt;.</p>
+
+<p>Varje &lt;p&gt; får en class som gör att texten blir understruken.</p>
+
+<p>Efter att loopen passerat 3:e taggen görs ett medvetet fel.</p>
+
+<p>Exekveringen av scriptblocket (script-taggens innehåll, inline eller i separat fil) kommer då avbrytas helt. Scriptblocket efter kommer dock exekveras.</p>
+
+
+<script>
+
+var pTags = document.getElementsByTagName('p'),
+	i, j;
+
+(function () {
+	
+	for (i = 0, j = pTags.length; i < j; i += 1) {
+
+		pTags[i].style.fontWeight = 'bold';
+
+		if (i === 2) {
+			pTags.henrik(1337); // Throws an error!
+		}
+
+	}
+
+}());
+
+(function () {
+	
+	for (i = 0, j = pTags.length; i < j; i += 1) {
+
+		pTags[i].style.color = 'red';
+
+	}
+
+}());
+
+</script>
+
+<script>
+
+(function () {
+	
+	for (i = 0, j = pTags.length; i < j; i += 1) {
+
+		pTags[i].style.textDecoration = 'underline';
+
+	}
+
+}());
+
+</script>

@@ -9,22 +9,24 @@ html {
 
 body {
 	font-size: 1.5em;
-	display: table;
-	width: 100%;
-	max-width: 40em;
-	height: 100%;
+	max-width: 33em;
 	margin: 0 auto;
-	padding: 0;
+	padding: 2em 1em;
 }
 
 [role=main] {
-	display: table-cell;
-	width: 100%;
-	padding: 20%;
-	vertical-align: middle;
+	
 }
 
 pre {
 	white-space: pre-wrap;       /* css-3 */
 	word-wrap: break-word;       /* Internet Explorer 5.5+ */
+}
+
+.warning {
+	background: #F00;
+	color: #FFF;
+	padding: 1em;
+	margin: 1em 0;
+	font-weight: bold;
 }

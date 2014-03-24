@@ -1,0 +1,36 @@
+---
+layout: default
+title: Demo
+---
+
+
+<a href="information.html" id="ex-1">Visa information</a>
+
+<div class="info" id="ex-1-info"></div>
+
+<script>
+// Borde antagligen flyttas till en separat fil.
+(function () {
+
+	'use strict';
+
+	function loadExample1(evt) {
+		evt.preventDefault();
+		var xmlhttp = new XMLHttpRequest();	
+		xmlhttp.onreadystatechange = function() {
+			if (xmlhttp.readyState == 4 && xmlhttp.status == 200) {
+				document.getElementById('ex-1-info').innerHTML = xmlhttp.responseText;
+			}
+		}
+		xmlhttp.open("GET", "information.html", true);
+		xmlhttp.send();
+	}
+
+	if (document.addEventListener && window.XMLHttpRequest) {
+		document.addEventListener('click', loadExample1);
+	}
+
+}());
+
+</script>
+
